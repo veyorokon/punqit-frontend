@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import {Switch, Route} from "react-router-dom";
 
 import routes from "routes.js";
 
@@ -11,8 +11,8 @@ const switchRoutes = (
   </Switch>
 );
 
-function Home() {
+function Landing() {
   return <React.Fragment>{switchRoutes}</React.Fragment>;
 }
 
-export default Home;
+export default Landing;

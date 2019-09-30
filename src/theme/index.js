@@ -1,4 +1,6 @@
-export default {
+import {system} from "styled-system";
+
+const theme = {
   breakpoints: [32, 48, 64, 80],
   space: [0, 4, 8, 16, 32, 64, 128],
   fonts: {
@@ -12,8 +14,21 @@ export default {
     bold: 700
   },
   colors: {
-    black: "#000",
-    white: "#fff"
+    black: ["#000"],
+    white: ["#fff"]
   },
   radii: [0, 2, 4]
 };
+
+const config = {
+  fontWeight: {
+    property: "fontWeight",
+    scale: "fontWeights"
+  }
+};
+
+config.fw = config.fontWeight;
+const fontWeight = system(config);
+
+export default theme;
+export {fontWeight};
