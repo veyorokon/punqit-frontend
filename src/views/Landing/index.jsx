@@ -1,9 +1,5 @@
 import React from "react";
-import {Text as RText} from "rebass";
-import {fontWeight} from "theme";
-import {ThemedComponent} from "lib";
-
-const Text = ThemedComponent(RText, [fontWeight]);
+import {Text} from "components";
 
 class Landing extends React.Component {
   render() {

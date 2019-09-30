@@ -1,8 +1,3 @@
-import {layout, typography, margin, padding, space, color} from "styled-system";
-import {css} from "styled-components";
+import {Text, Box} from "./themedComponents";
 
-const genericFields = css`
-  ${(layout, typography, margin, padding, space, color)}
-`;
-
-export default genericFields;
+export {Text, Box};
