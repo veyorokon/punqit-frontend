@@ -20,13 +20,19 @@ function formatValues(values) {
   fmt = values.replace(/x-/g, "x -");
   fmt = fmt.replace(/m-/g, "m -");
   fmt = fmt.split(">").join(" ");
+
+  if (fmt[0] === "-") {
+    fmt = fmt.replace("-", "initial ");
+  }
   fmt = fmt.split(" ");
+
   fmt = fmt.filter(elem => elem !== "");
   return fmt;
 }
 
 function responsive(values) {
   let fmt = formatValues(values);
+  console.log(fmt);
   let output = [];
   let lastElem = fmt[0];
   fmt.forEach(function(value) {
