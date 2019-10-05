@@ -19,6 +19,7 @@ function formatValues(values) {
   let fmt;
   fmt = values.replace(/x-/g, "x -");
   fmt = fmt.replace(/m-/g, "m -");
+  fmt = fmt.replace(/l-/g, "l -");
   fmt = fmt.split(">").join(" ");
 
   if (fmt[0] === "-") {
@@ -32,9 +33,9 @@ function formatValues(values) {
 
 function responsive(values) {
   let fmt = formatValues(values);
-  console.log(fmt);
   let output = [];
   let lastElem = fmt[0];
+
   fmt.forEach(function(value) {
     if (value.includes("-")) {
       for (var i = 0; i < value.length; i++) {
@@ -43,8 +44,13 @@ function responsive(values) {
         }
       }
     } else {
-      output.push(value);
-      lastElem = value;
+      if (+value) {
+        output.push(+value);
+        lastElem = +value;
+      } else {
+        output.push(value);
+        lastElem = value;
+      }
     }
   });
   return output;
