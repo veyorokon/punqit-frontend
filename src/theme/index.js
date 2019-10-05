@@ -1,5 +1,5 @@
 import theme from "./theme";
-import {fontWeight} from "./config";
+import {fontWeight, fontSize} from "./config";
 
 export default theme;
-export {fontWeight};
+export {fontWeight, fontSize};

@@ -4,10 +4,17 @@ const config = {
   fontWeight: {
     property: "fontWeight",
     scale: "fontWeights"
+  },
+  fontSize: {
+    property: "fontSize",
+    scale: "fontSizes"
   }
 };
 
 config.fw = config.fontWeight;
-const fontWeight = system(config);
+config.fs = config.fontSize;
 
-export {fontWeight};
+const fontWeight = system(config);
+const fontSize = system(config);
+
+export {fontWeight, fontSize};

@@ -1,7 +1,7 @@
 import {system} from "styled-system";
 
 const theme = {
-  breakpoints: [32, 48, 64, 80],
+  breakpoints: ["32.5em", "40em", "48em", "52em", "60.625em", "75em"],
   space: [0, 4, 8, 16, 32, 64, 128],
   fonts: {
     sans:

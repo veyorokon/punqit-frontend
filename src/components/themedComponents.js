@@ -1,7 +1,7 @@
 import {Text as RText, Box as RBox} from "rebass";
-import {ThemedComponent} from "lib";
+import {themedComponent} from "lib";
 
-const Text = ThemedComponent(RText);
-const Box = ThemedComponent(RBox);
+const Text = themedComponent(RText);
+const Box = themedComponent(RBox);
 
 export {Text, Box};
