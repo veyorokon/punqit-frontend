@@ -19,6 +19,7 @@ function formatValues(values) {
   let fmt;
   fmt = values.replace(/x-/g, "x -");
   fmt = fmt.replace(/m-/g, "m -");
+  fmt = fmt.replace(/%-/g, "% -");
   fmt = fmt.replace(/l-/g, "l -");
   fmt = fmt.split(">").join(" ");
 

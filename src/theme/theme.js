@@ -1,5 +1,3 @@
-import {system} from "styled-system";
-
 const theme = {
   breakpoints: ["32.5em", "40em", "48em", "52em", "60.625em", "75em"],
   space: [0, 4, 8, 16, 32, 64, 128],
@@ -20,15 +18,4 @@ const theme = {
   radii: [0, 2, 4]
 };
 
-const config = {
-  fontWeight: {
-    property: "fontWeight",
-    scale: "fontWeights"
-  }
-};
-
-config.fw = config.fontWeight;
-const fontWeight = system(config);
-
 export default theme;
-export {fontWeight};
