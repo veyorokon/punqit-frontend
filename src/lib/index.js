@@ -1,11 +1,31 @@
-import styled from "styled-components";
-import {layout, typography, margin, padding, space, color} from "styled-system";
-import {css} from "styled-components";
+import styled, {css} from "styled-components";
+import {
+  layout,
+  typography,
+  margin,
+  padding,
+  space,
+  color,
+  compose
+} from "styled-system";
 import {fontWeight, fontSize} from "theme";
 
+const fontFields = compose(
+  fontWeight,
+  fontSize
+);
+const defaultFields = compose(
+  layout,
+  typography,
+  margin,
+  padding,
+  space,
+  color
+);
+
 const genericFields = css`
-  ${(layout, typography, margin, padding, space, color)}
-  ${(fontWeight, fontSize)}
+  ${defaultFields}
+  ${fontFields}
 `;
 
 function themedComponent(ComponentToLoad, fields = []) {

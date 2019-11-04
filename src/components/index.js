@@ -1,3 +1,4 @@
 import {Text, Box} from "./themedComponents";
+import {Animate} from "./animation";
 
-export {Text, Box};
+export {Text, Box, Animate};

@@ -1,20 +1,22 @@
 import {system} from "styled-system";
 
-const config = {
-  fontWeight: {
-    property: "fontWeight",
-    scale: "fontWeights"
-  },
-  fontSize: {
-    property: "fontSize",
-    scale: "fontSizes"
+function configure(prop, shortName = [], scale = null) {
+  let config = {[prop]: {property: prop}};
+  if (scale) {
+    config = {[prop]: {property: prop, scale: scale}};
   }
-};
+  if (shortName && shortName.constructor === Array) {
+    shortName.forEach(function(value) {
+      config[value] = config[prop];
+    });
+  } else if (shortName && shortName.constructor === String) {
+    config[shortName] = config[prop];
+  }
+  return system(config);
+}
 
-config.fw = config.fontWeight;
-config.fs = config.fontSize;
+const fontWeight = configure("fontWeight", "fw", "fontWeights");
+const fontSize = configure("fontSize", "fs", "fontSizes");
 
-const fontWeight = system(config);
-const fontSize = system(config);
-
+export default configure;
 export {fontWeight, fontSize};
