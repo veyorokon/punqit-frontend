@@ -1,5 +1,5 @@
 import React from "react";
-import {Text, Animate} from "components";
+import {Text, Animate, Transition, Hidden} from "components";
 import {responsive as r} from "lib";
 import {keyframes} from "styled-components";
 
@@ -13,11 +13,39 @@ const appear = keyframes`
 class Landing extends React.Component {
   render() {
     return (
-      <Text fs={r("30px --> 30rem")} fw="bold" color={"white.0"} bg={"black.0"}>
-        <Animate animation={appear} duration={".5s"} function={"ease-in-out"}>
-          test
-        </Animate>
-      </Text>
+      <React.Fragment>
+        <Text fs={r("30px -> 5rem")} fw="bold" color={"white.0"} bg={"black.0"}>
+          <Transition transition={"all"} duration={".3s"}>
+            <Animate
+              animation={appear}
+              duration={".5s"}
+              function={"ease-in-out"}
+              delay={".2s"}
+            >
+              Data
+            </Animate>
+          </Transition>
+        </Text>
+        <Hidden down bp={3}>
+          <Text
+            fs={r("30px --> 5rem")}
+            fw="bold"
+            color={"white.0"}
+            bg={"black.0"}
+          >
+            <Transition transition={"all"} duration={".3s"}>
+              <Animate
+                animation={appear}
+                duration={".5s"}
+                function={"ease-in-out"}
+                delay={".2s"}
+              >
+                hidden
+              </Animate>
+            </Transition>
+          </Text>
+        </Hidden>
+      </React.Fragment>
     );
   }
 }
