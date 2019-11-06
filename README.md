@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Setup Environment Before You Run
+Create a '.env' file in this directory with the following value:
+NODE_PATH=./src
+
 ## Available Scripts
 
 In the project directory, you can run:
