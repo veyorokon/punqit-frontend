@@ -1,38 +1,27 @@
-import styled, {css} from "styled-components";
-import {
-  layout,
-  typography,
-  margin,
-  padding,
-  space,
-  color,
-  compose
-} from "styled-system";
-import {fontWeight, fontSize} from "theme";
+/*
+    Author: Vahid Eyorokon
 
-const fontFields = compose(
-  fontWeight,
-  fontSize
-);
-const defaultFields = compose(
-  layout,
-  typography,
-  margin,
-  padding,
-  space,
-  color
-);
+    Utility functions and commonly used fields
+*/
 
-const genericFields = css`
-  ${defaultFields}
-  ${fontFields}
-`;
+/*
+    Imports
+*/
 
-function themedComponent(ComponentToLoad, fields = []) {
-  return styled(ComponentToLoad)`
-    ${fields}
-    ${genericFields}
-  `;
+import styled from "styled-components";
+
+import {generics} from "theme";
+
+function themedComponent(ComponentToLoad, fields = [], withGenerics = true) {
+  if (withGenerics)
+    return styled(ComponentToLoad)`
+      ${fields}
+      ${generics}
+    `;
+  else
+    return styled(ComponentToLoad)`
+      ${fields}
+    `;
 }
 
 function formatValues(values) {

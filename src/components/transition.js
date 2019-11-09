@@ -1,11 +1,22 @@
+/*
+    Author: Vahid Eyorokon
+*/
+
+/*
+    Imports
+*/
 import styled from "styled-components";
 import {compose} from "styled-system";
 import configure from "theme/config";
 
+/*
+// TODO: MAKE TRANSITION A HIGHER ORDER COMPONENT
+ */
+
 const transitionDuration = configure("transitionDuration", "duration");
 const transitionTimingFunction = configure(
   "transitionTimingFunction",
-  "timing"
+  "function"
 );
 const transitionDelay = configure("transitionDelay", "delay");
 
@@ -20,4 +31,4 @@ const Transition = styled.span`
   ${transitionFields};
 `;
 
-export {Transition};
+export default Transition;
