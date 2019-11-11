@@ -14,7 +14,7 @@ const Video = styled.video``;
 class Landing extends React.Component {
   render() {
     const videoOptions = {
-      src: "video-bg-5.mp4",
+      src: "video-bg-trimmed.mp4",
       ref: videoRef => {
         this.videoRef = videoRef;
       }
