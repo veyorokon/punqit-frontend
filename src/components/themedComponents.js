@@ -16,11 +16,12 @@ import {themedComponent} from "lib";
 import styled from "styled-components";
 import {borderRadius} from "styled-system";
 
+const Video = themedComponent(styled.video``);
 const Text = themedComponent(RText, ["overflow: hidden;"]);
 const Box = themedComponent(RBox, [borderRadius]);
 const Flex = themedComponent(RFlex);
-const Button = themedComponent(RButton);
+const Button = themedComponent(RButton, ["cursor: pointer"]);
 const Heading = themedComponent(RHeading);
 const Input = themedComponent(styled.input``);
 
-export {Text, Box, Flex, Button, Heading, Input};
+export {Text, Box, Flex, Button, Heading, Input, Video};

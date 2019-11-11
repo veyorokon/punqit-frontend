@@ -12,6 +12,15 @@ import {compose} from "styled-system";
 /*
      Fields
  */
+const overflow = configure("overflow", ["overflow"]);
+
+const top = configure("top", ["top"], "space");
+const bottom = configure("bottom", ["bottom"], "space");
+const left = configure("left", ["left"], "space");
+const right = configure("right", ["right"], "space");
+
+const width = configure("width", ["w", "width"], "space");
+const height = configure("height", ["h", "height"], "space");
 
 const background = configure("background", ["bg", "background"], "colors");
 const color = configure("color", "color", "colors");
@@ -23,17 +32,20 @@ const typography = compose(
   fontSize
 );
 
+const margin = configure("margin", ["margin", "m"], "space");
 const marginTop = configure("marginTop", ["marginTop", "mt"], "space");
 const marginBottom = configure("marginBottom", ["marginBottom", "mb"], "space");
 const marginLeft = configure("marginLeft", ["marginLeft", "ml"], "space");
 const marginRight = configure("marginRight", ["marginRight", "mr"], "space");
-const margin = compose(
+const marginFields = compose(
+  margin,
   marginTop,
   marginBottom,
   marginLeft,
   marginRight
 );
 
+const padding = configure("padding", ["padding", "p"], "space");
 const paddingTop = configure("paddingTop", ["paddingTop", "pt"], "space");
 const paddingBottom = configure(
   "paddingBottom",
@@ -42,7 +54,8 @@ const paddingBottom = configure(
 );
 const paddingLeft = configure("paddingLeft", ["paddingLeft", "pl"], "space");
 const paddingRight = configure("paddingRight", ["paddingRight", "pr"], "space");
-const padding = compose(
+const paddingFields = compose(
+  padding,
   paddingTop,
   paddingBottom,
   paddingLeft,
@@ -51,19 +64,33 @@ const padding = compose(
 
 const generics = compose(
   typography,
-  margin,
-  padding,
+  marginFields,
+  paddingFields,
   background,
-  color
+  color,
+  width,
+  height,
+  overflow,
+  top,
+  bottom,
+  left,
+  right
 );
 
 export {
+  top,
+  bottom,
+  left,
+  right,
+  overflow,
   generics,
   background,
   color,
   typography,
   fontWeight,
   fontSize,
+  marginFields,
+  paddingFields,
   margin,
   marginTop,
   marginBottom,
@@ -73,5 +100,7 @@ export {
   paddingTop,
   paddingLeft,
   paddingRight,
-  paddingBottom
+  paddingBottom,
+  width,
+  height
 };

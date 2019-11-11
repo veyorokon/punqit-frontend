@@ -1,22 +1,41 @@
 import React from "react";
-import {Box, Flex, Text, Animate} from "components";
+import {Box, Flex, Text, Animate, Video, Hidden, Button} from "components";
 import styled, {keyframes} from "styled-components";
+import {responsive as r} from "lib";
 
 const appear = keyframes`
+0%{
+  opacity: 0;
+}
+100%{
+  opacity: 1;
+}
+`;
+
+const videoAnimation = keyframes`
   0% {
     opacity: 0; }
   3% {
     opacity: 0; }
   7% {
-    opacity: 1; }
+    opacity: 1;
+   }
+   15%{
+     filter: brightness(1);
+   }
+   20%{
+     filter: brightness(1.2);
+   }
   90% {
     opacity: 1;
+    filter: brightness(1.2);
   }
   99% {
     opacity: 0;
   }
   100%{
     opacity: 0;
+    filter: brightness(1);
   }
 `;
 
@@ -26,17 +45,27 @@ const TitleContainer = styled(Flex)`
 `;
 const VideoContainer = styled(Box)`
   overflow: hidden;
-  margin: auto 5rem 30rem 4rem !important;
   position: absolute;
-  right: 0;
-  bottom: 0;
+  transition: top 0.4s ease-in-out;
 `;
-const Video = styled.video``;
 const Title = styled(Text)`
   height: fit-content;
 `;
 const SubTitle = styled(Text)`
   line-height: 1;
+`;
+const CallToAction = styled(Button)`
+  color: black;
+  background: white;
+  border: 2px solid white !important;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background: black;
+    color: white;
+  }
+  &:focus {
+    outline: none;
+  }
 `;
 
 class Landing extends React.Component {
@@ -48,54 +77,86 @@ class Landing extends React.Component {
       }
     };
     return (
-      <Flex bg={"blacks.0"} width={"100vw"} height={"90rem"}>
-        <TitleContainer flexDirection={"column"} mt={6} ml={6} mb={"auto"}>
-          <Flex>
-            <Title fs={"12rem"} fw={"400"} as="h1" color={"whites.0"}>
-              punqit
-            </Title>
-            <Text fs={"12rem"} fw={"bold"} color={"red"}>
-              .
-            </Text>
-          </Flex>
-          <Flex mt={5} w={"fit-content"}>
-            <SubTitle
-              lineHeight="1"
-              as="p"
-              color={"whites.0"}
-              fs={"3rem"}
-              fw={"300"}
-            >
-              Deepfakes for the web.
-            </SubTitle>
-          </Flex>
-        </TitleContainer>
-        <VideoContainer width={"110rem"} height={"60rem"} bg="blacks.0">
+      <Flex overflow="hidden" bg={"blacks.0"} width={"100vw"} height={"90rem"}>
+        <TitleContainer flexDirection={"column"} mt={5} ml={6} mb={"auto"}>
           <Animate
             animation={appear}
-            duration={"29s"}
+            duration={"1.5s"}
             function={"ease-in-out"}
-            iterations={"infinite"}
           >
-            <Video
-              playsInline
-              autoPlay
-              no-controls
-              loop
-              muted
-              type="video/mp4"
-              style={{
-                width: "130rem",
-                marginLeft: "4rem",
-                marginTop: "3rem",
-                height: "auto",
-                outline: "none",
-                filter: "brightness(1.1)"
-              }}
-              {...videoOptions}
-            />
+            <Flex>
+              <Title fs={"12rem"} fw={"400"} as="h1" color={"whites.0"}>
+                punqit
+              </Title>
+
+              <Text fs={"12rem"} fw={"bold"} color={"red"}>
+                .
+              </Text>
+            </Flex>
           </Animate>
-        </VideoContainer>
+          <Flex mt={4} w={"fit-content"}>
+            <Animate
+              delay={"0.5s"}
+              animation={appear}
+              duration={"1.5s"}
+              function={"ease-in-out"}
+            >
+              <SubTitle
+                lineHeight="1"
+                as="p"
+                color={"whites.0"}
+                fs={"3rem"}
+                fw={"300"}
+              >
+                Deepfakes for the web.
+              </SubTitle>
+            </Animate>
+          </Flex>
+          <Flex mt={4} w={"fit-content"}>
+            <Animate
+              delay={"0.5s"}
+              animation={appear}
+              duration={"1.5s"}
+              function={"ease-in-out"}
+            >
+              <CallToAction color={"black"} bg={"whites.0"}>
+                <Text color={"inherit"} fs={"2rem"}>
+                  Get Started
+                </Text>
+              </CallToAction>
+            </Animate>
+          </Flex>
+        </TitleContainer>
+        <Animate
+          animation={videoAnimation}
+          duration={"29.5s"}
+          function={"ease-in-out"}
+          iterations={"infinite"}
+        >
+          <Hidden down bp={6}>
+            <VideoContainer
+              right="0"
+              top={r("30% -------> 20%")}
+              mt={"auto"}
+              w={"110rem"}
+              h={"60rem"}
+              bg="blacks.0"
+            >
+              <Video
+                playsInline
+                autoPlay
+                no-controls
+                loop
+                muted
+                type="video/mp4"
+                width={"130rem"}
+                ml={"4rem"}
+                height={"auto"}
+                {...videoOptions}
+              />
+            </VideoContainer>
+          </Hidden>
+        </Animate>
       </Flex>
     );
   }
