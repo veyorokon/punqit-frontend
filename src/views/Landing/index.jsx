@@ -42,6 +42,7 @@ const videoAnimation = keyframes`
 const TitleContainer = styled(Flex)`
   flex-grow: 1;
   z-index: 10;
+  transition: all 0.4s ease-in-out;
 `;
 const VideoContainer = styled(Box)`
   overflow: hidden;
@@ -76,9 +77,15 @@ class Landing extends React.Component {
         this.videoRef = videoRef;
       }
     };
+    const margins = r("5 --> 6");
     return (
       <Flex overflow="hidden" bg={"blacks.0"} width={"100vw"} height={"90rem"}>
-        <TitleContainer flexDirection={"column"} mt={5} ml={6} mb={"auto"}>
+        <TitleContainer
+          flexDirection={"column"}
+          mt={5}
+          ml={margins}
+          mb={"auto"}
+        >
           <Animate
             animation={appear}
             duration={"1.5s"}
