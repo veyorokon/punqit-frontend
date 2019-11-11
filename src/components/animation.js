@@ -17,12 +17,17 @@ const animationDuration = configure("animationDuration", "duration");
 const animationTimingFunction = configure("animationTimingFunction", "timing");
 const animationDelay = configure("animationDelay", "delay");
 const animationFillMode = configure("animationFillMode", "fillMode");
+const animationIterationCount = configure(
+  "animationIterationCount",
+  "iterations"
+);
 
 const animationFields = compose(
   animationDuration,
   animationTimingFunction,
   animationDelay,
-  animationFillMode
+  animationFillMode,
+  animationIterationCount
 );
 
 /*
