@@ -2,7 +2,9 @@ import React from "react";
 import {Box, Flex, Text, Animate, Video, Hidden, Button} from "components";
 import styled, {keyframes} from "styled-components";
 import {responsive as r} from "lib";
+import {configure, generics} from "theme";
 
+const flexDirection = configure("flexDirection", [], "space");
 const appear = keyframes`
 0%{
   opacity: 0;
@@ -11,7 +13,6 @@ const appear = keyframes`
   opacity: 1;
 }
 `;
-
 const videoAnimation = keyframes`
   0% {
     opacity: 0; }
@@ -39,7 +40,10 @@ const videoAnimation = keyframes`
   }
 `;
 
-const TitleContainer = styled(Flex)`
+const TitleContainer = styled.div`
+  display: flex;
+  ${generics}
+  ${flexDirection}
   flex-grow: 1;
   z-index: 10;
   transition: all 0.4s ease-in-out;
@@ -59,7 +63,7 @@ const CallToAction = styled(Button)`
   color: black;
   background: white;
   border: 2px solid white !important;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
   &:hover {
     background: black;
     color: white;
@@ -112,33 +116,13 @@ class Landing extends React.Component {
                 fs={"3rem"}
                 fw={"300"}
               >
-                Deepfakes for the web.
-              </SubTitle>
-            </Animate>
-          </Flex>
-          <Flex mt={4} mb={1} w={"fit-content"}>
-            <Animate
-              delay={"0.5s"}
-              animation={appear}
-              duration={"1.5s"}
-              function={"ease-in-out"}
-            >
-              <SubTitle
-                lineHeight="2"
-                as="p"
-                color={"whites.0"}
-                fs={"2rem"}
-                fw={"300"}
-                w={["50%"]}
-              >
-                Use artificial intelligence to create deepfakes at the click of
-                a button.
+                Make deepfakes online.
               </SubTitle>
             </Animate>
           </Flex>
           <Flex mt={4} w={"fit-content"}>
             <Animate
-              delay={"0.5s"}
+              delay={"0.75s"}
               animation={appear}
               duration={"1.5s"}
               function={"ease-in-out"}
@@ -153,7 +137,7 @@ class Landing extends React.Component {
         </TitleContainer>
         <Animate
           animation={videoAnimation}
-          duration={"29.75s"}
+          duration={"29.25s"}
           function={"ease-in-out"}
           iterations={"infinite"}
         >
