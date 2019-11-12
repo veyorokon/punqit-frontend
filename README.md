@@ -1,68 +1,74 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# punq / punqit
 
-## Available Scripts
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/veyorokon/punqit-frontend)
 
-In the project directory, you can run:
+![](./git-assets/punqit.gif)
 
-### `npm start`
+punq is an online tool for creating deep fakes.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  - Users can upload data for subject and targets from which models are trained.
+  - Models can be saved for each user.
+  - Intuitive interface to create deep fake videos at the click of a button.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+# New Features!
 
-### `npm test`
+  - New UI!
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Tech
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+punq uses a number of open source and free tier projects to work properly:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+* [ReactJS] - Front end JS framework.
+* [Django] - Backend framework built with python.
+* [npm] - Package manager for installing ReactJS modules.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Local Installation & Development
 
-### `npm run eject`
+punq requires [Node.js](https://nodejs.org/) v12.5.0+ to run.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Install the frontend dependencies and start the `frontend` server. Open a new terminal and run:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```sh
+$ npm install -d
+$ npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Verify this by navigating to localhost port 3000 in your web browser.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```sh
+127.0.0.1:3000
+```
 
-## Learn More
+To stop the `frontend`, go back to the terminal window running it. Then, press `control + c`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### For production environments...
 
-### Code Splitting
+```sh
+$ Install instructions needed.
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+License
+----
 
-### Analyzing the Bundle Size
+***Proprietary, Please Keep Private***
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+   [ReactJS]: <https://github.com/facebook/react>
+   [Django]: <https://github.com/django/django>
+   [npm]: <https://github.com/npm/cli>
+   [Mixpanel]: <https://github.com/mixpanel/mixpanel-js>
+   [Docker]: <https://github.com/docker>
+   [Graphene]: <https://github.com/graphql-python/graphene>
+   [Apollo]: <https://github.com/apollographql/apollo-client>
+   [Material-UI]: <https://github.com/mui-org/material-ui>
+   [Stripe]: <https://github.com/stripe/stripe-python>
+   [GraphQL]: <https://graphql.org/>
+   [GraphIQL]: <https://github.com/graphql/graphiql>
+   [Django Mail Templated]: <https://pypi.org/project/django-mail-templated>
+   [Redis]: <https://github.com/redis>
+   [Django Redis]: <https://github.com/niwinz/django-redis>
+   [Celery]: <https://github.com/celery/celery>
+   [Celery Beat]: <http://docs.celeryproject.org/en/latest/userguide/periodic-tasks.html>
+   [Postgres]: <https://www.postgresql.org/>
