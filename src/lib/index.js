@@ -24,9 +24,9 @@ function themedComponent(ComponentToLoad, fields = [], withGenerics = true) {
     `;
 }
 
-function formatValues(values) {
+function formatValues(vals) {
   let fmt;
-  fmt = values.replace(/x-/g, "x -");
+  fmt = vals.replace(/x-/g, "x -");
   fmt = fmt.replace(/m-/g, "m -");
   fmt = fmt.replace(/%-/g, "% -");
   fmt = fmt.replace(/l-/g, "l -");
@@ -42,11 +42,11 @@ function formatValues(values) {
 }
 
 function responsive(values) {
-  let fmt = formatValues(values);
+  let formatted = formatValues(values);
   let output = [];
-  let lastElem = fmt[0];
+  let lastElem = formatted[0];
 
-  fmt.forEach(function(value) {
+  formatted.forEach(function(value) {
     if (value.includes("-")) {
       for (var i = 0; i < value.length; i++) {
         if (value[i] === "-") {

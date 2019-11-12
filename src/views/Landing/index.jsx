@@ -77,31 +77,28 @@ class Landing extends React.Component {
         this.videoRef = videoRef;
       }
     };
-    const margins = r("5 --> 6");
     return (
       <Flex overflow="hidden" bg={"blacks.0"} width={"100vw"} height={"90rem"}>
         <TitleContainer
           flexDirection={"column"}
-          mt={5}
-          ml={margins}
-          mb={"auto"}
+          margin={r("4rem ---> 5rem -> 6rem")}
         >
           <Animate
             animation={appear}
             duration={"1.5s"}
             function={"ease-in-out"}
+            width={"fit-content"}
           >
             <Flex>
               <Title fs={"12rem"} fw={"400"} as="h1" color={"whites.0"}>
                 punqit
               </Title>
-
               <Text fs={"12rem"} fw={"bold"} color={"red"}>
                 .
               </Text>
             </Flex>
           </Animate>
-          <Flex mt={4} w={"fit-content"}>
+          <Flex mt={4} mb={1} w={"fit-content"}>
             <Animate
               delay={"0.5s"}
               animation={appear}
@@ -116,6 +113,26 @@ class Landing extends React.Component {
                 fw={"300"}
               >
                 Deepfakes for the web.
+              </SubTitle>
+            </Animate>
+          </Flex>
+          <Flex mt={4} mb={1} w={"fit-content"}>
+            <Animate
+              delay={"0.5s"}
+              animation={appear}
+              duration={"1.5s"}
+              function={"ease-in-out"}
+            >
+              <SubTitle
+                lineHeight="2"
+                as="p"
+                color={"whites.0"}
+                fs={"2rem"}
+                fw={"300"}
+                w={["50%"]}
+              >
+                Use artificial intelligence to create deepfakes at the click of
+                a button.
               </SubTitle>
             </Animate>
           </Flex>
@@ -136,7 +153,7 @@ class Landing extends React.Component {
         </TitleContainer>
         <Animate
           animation={videoAnimation}
-          duration={"29.5s"}
+          duration={"29.75s"}
           function={"ease-in-out"}
           iterations={"infinite"}
         >

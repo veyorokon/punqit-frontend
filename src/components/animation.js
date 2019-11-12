@@ -9,6 +9,7 @@ import styled from "styled-components";
 import {compose} from "styled-system";
 import configure from "theme/config";
 import {keyframes} from "styled-components";
+import {themedComponent} from "lib";
 
 /*
     Globals & Constants
@@ -49,5 +50,5 @@ Animate.defaultProps = {
   fillMode: "both"
 };
 
-export default Animate;
+export default themedComponent(Animate);
 export {appear};
