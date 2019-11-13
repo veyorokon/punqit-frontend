@@ -2,9 +2,7 @@ import React from "react";
 import {Box, Flex, Text, Animate, Video, Hidden, Button} from "components";
 import styled, {keyframes} from "styled-components";
 import {responsive as r} from "lib";
-import {configure, generics} from "theme";
 
-const flexDirection = configure("flexDirection", [], "space");
 const appear = keyframes`
 0%{
   opacity: 0;
@@ -40,10 +38,7 @@ const videoAnimation = keyframes`
   }
 `;
 
-const TitleContainer = styled.div`
-  display: flex;
-  ${generics}
-  ${flexDirection}
+const TitleContainer = styled(Flex)`
   flex-grow: 1;
   z-index: 10;
   transition: all 0.4s ease-in-out;
@@ -85,7 +80,8 @@ class Landing extends React.Component {
       <Flex overflow="hidden" bg={"blacks.0"} width={"100vw"} height={"90rem"}>
         <TitleContainer
           flexDirection={"column"}
-          margin={r("4rem ---> 5rem -> 6rem")}
+          ml={r("4 ---> 5 --> 6")}
+          mt={r("4 --------> 5")}
         >
           <Animate
             animation={appear}
