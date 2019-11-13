@@ -6,6 +6,7 @@ const flexDirection = configure("flexDirection", [], "space");
 const Box = styled.div`
   max-height: fit-content;
   display: block;
+  height: fit-content;
 `;
 
 const Flex = styled(Box)`
