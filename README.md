@@ -27,6 +27,10 @@ punq uses a number of open source and free tier projects to work properly:
 
 punq requires [Node.js](https://nodejs.org/) v12.5.0+ to run.
 
+Create a `.env` file in the root of the project directory (probably the current one). Add the following to the file and save:
+
+`NODE_PATH=./src`
+
 Install the frontend dependencies and start the `frontend` server. Open a new terminal and run:
 
 ```sh
