@@ -16,7 +16,11 @@ import {
   paddingTop,
   paddingLeft,
   paddingRight,
-  paddingBottom
+  paddingBottom,
+  flexDirection,
+  alignItems,
+  justifyContent,
+  flexFields
 } from "./fields";
 
 export default theme;
@@ -37,5 +41,9 @@ export {
   paddingLeft,
   paddingRight,
   paddingBottom,
-  configure
+  configure,
+  flexDirection,
+  alignItems,
+  justifyContent,
+  flexFields
 };

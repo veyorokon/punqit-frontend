@@ -12,32 +12,48 @@ import {compose} from "styled-system";
 /*
      Fields
  */
-const overflow = configure("overflow", ["overflow"]);
+export const overflow = configure("overflow", ["overflow"]);
 
-const top = configure("top", ["top"], "space");
-const bottom = configure("bottom", ["bottom"], "space");
-const left = configure("left", ["left"], "space");
-const right = configure("right", ["right"], "space");
+export const top = configure("top", ["top"], "space");
+export const bottom = configure("bottom", ["bottom"], "space");
+export const left = configure("left", ["left"], "space");
+export const right = configure("right", ["right"], "space");
 
-const width = configure("width", ["w", "width"], "space");
-const height = configure("height", ["h", "height"], "space");
+export const width = configure("width", ["w", "width"], "space");
+export const height = configure("height", ["h", "height"], "space");
 
-const background = configure("background", ["bg", "background"], "colors");
-const color = configure("color", "color", "colors");
+export const background = configure(
+  "background",
+  ["bg", "background"],
+  "colors"
+);
+export const color = configure("color", "color", "colors");
 
-const fontWeight = configure("fontWeight", "fw", "fontWeights");
-const fontSize = configure("fontSize", "fs", "fontSizes");
-const typography = compose(
+export const fontWeight = configure("fontWeight", "fw", "fontWeights");
+export const fontSize = configure("fontSize", "fs", "fontSizes");
+export const typography = compose(
   fontWeight,
   fontSize
 );
 
-const margin = configure("margin", ["margin", "m"], "space");
-const marginTop = configure("marginTop", ["marginTop", "mt"], "space");
-const marginBottom = configure("marginBottom", ["marginBottom", "mb"], "space");
-const marginLeft = configure("marginLeft", ["marginLeft", "ml"], "space");
-const marginRight = configure("marginRight", ["marginRight", "mr"], "space");
-const marginFields = compose(
+export const margin = configure("margin", ["margin", "m"], "space");
+export const marginTop = configure("marginTop", ["marginTop", "mt"], "space");
+export const marginBottom = configure(
+  "marginBottom",
+  ["marginBottom", "mb"],
+  "space"
+);
+export const marginLeft = configure(
+  "marginLeft",
+  ["marginLeft", "ml"],
+  "space"
+);
+export const marginRight = configure(
+  "marginRight",
+  ["marginRight", "mr"],
+  "space"
+);
+export const marginFields = compose(
   margin,
   marginTop,
   marginBottom,
@@ -45,16 +61,28 @@ const marginFields = compose(
   marginRight
 );
 
-const padding = configure("padding", ["padding", "p"], "space");
-const paddingTop = configure("paddingTop", ["paddingTop", "pt"], "space");
-const paddingBottom = configure(
+export const padding = configure("padding", ["padding", "p"], "space");
+export const paddingTop = configure(
+  "paddingTop",
+  ["paddingTop", "pt"],
+  "space"
+);
+export const paddingBottom = configure(
   "paddingBottom",
   ["paddingBottom", "pb"],
   "space"
 );
-const paddingLeft = configure("paddingLeft", ["paddingLeft", "pl"], "space");
-const paddingRight = configure("paddingRight", ["paddingRight", "pr"], "space");
-const paddingFields = compose(
+export const paddingLeft = configure(
+  "paddingLeft",
+  ["paddingLeft", "pl"],
+  "space"
+);
+export const paddingRight = configure(
+  "paddingRight",
+  ["paddingRight", "pr"],
+  "space"
+);
+export const paddingFields = compose(
   padding,
   paddingTop,
   paddingBottom,
@@ -62,7 +90,16 @@ const paddingFields = compose(
   paddingRight
 );
 
-const generics = compose(
+export const flexDirection = configure("flexDirection");
+export const alignItems = configure("alignItems");
+export const justifyContent = configure("justifyContent");
+export const flexFields = compose(
+  flexDirection,
+  alignItems,
+  justifyContent
+);
+
+export const generics = compose(
   typography,
   marginFields,
   paddingFields,
@@ -76,31 +113,3 @@ const generics = compose(
   left,
   right
 );
-
-export {
-  top,
-  bottom,
-  left,
-  right,
-  overflow,
-  generics,
-  background,
-  color,
-  typography,
-  fontWeight,
-  fontSize,
-  marginFields,
-  paddingFields,
-  margin,
-  marginTop,
-  marginBottom,
-  marginLeft,
-  marginRight,
-  padding,
-  paddingTop,
-  paddingLeft,
-  paddingRight,
-  paddingBottom,
-  width,
-  height
-};

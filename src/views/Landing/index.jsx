@@ -38,7 +38,7 @@ const VideoContainer = styled(Box)`
   transition: top 0.4s ease-in-out;
 `;
 const Title = styled(Text)`
-  height: fit-content;
+  height: 100%;
   transition: all 0.3s ease-in-out;
 `;
 const SubTitle = styled(Text)`
@@ -77,6 +77,7 @@ class Landing extends React.Component {
         height={"90rem"}
       >
         <TitleContainer
+          h={"40rem"}
           flexDirection={"column"}
           ml={r("auto ----> 5")}
           mr={r("auto ----> 0")}
@@ -164,7 +165,7 @@ class Landing extends React.Component {
           </Flex>
         </TitleContainer>
 
-        <Hidden down bp={6}>
+        <Hidden down bp={4}>
           <VideoContainer
             right="0"
             top={r("30% -------> 20%")}
@@ -181,7 +182,7 @@ class Landing extends React.Component {
               muted
               type="video/mp4"
               width={"130rem"}
-              ml={"4rem"}
+              ml={r("0 ----> 15rem 4rem")}
               height={"auto"}
               {...videoOptions}
             />
