@@ -1,22 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import {themedComponent} from "lib";
-import {Box} from "./themedComponents";
+import {themedComponent} from "theme";
+import {Box} from "components/core";
 
 /*
 <Tabs>
   <TabHeaders>
     <Tab>SomeName</Tab>
   </TabHeaders>
-  <TabComponents>
+  <TabContents>
     <Panel>Here is one panel</Panel>
-  </TabComponents>
+  </TabContents>
 </Tabs>
  */
 
 const Tabs = Box;
 const TabHeaders = themedComponent(styled.ul``);
-const TabComponents = themedComponent(styled.div``);
+const TabContents = themedComponent(styled.div``);
 const Tab = themedComponent(styled.li``);
 const Panel = Box;
 
@@ -50,12 +50,10 @@ class TabComponent extends React.Component {
             );
           })}
         </TabHeaders>
-        <TabComponents>
-          {this.props.children[this.state.selected]}
-        </TabComponents>
+        <TabContents>{this.props.children[this.state.selected]}</TabContents>
       </Tabs>
     );
   }
 }
 
-export {Tabs, TabHeaders, TabComponents, Tab, Panel, TabComponent};
+export {Tabs, TabHeaders, TabContents, Tab, Panel, TabComponent};

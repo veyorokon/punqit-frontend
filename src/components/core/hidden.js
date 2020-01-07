@@ -7,12 +7,12 @@
 */
 
 import React from "react";
-import PropTypes from "prop-types";
-import styled, {withTheme} from "styled-components";
-import {display} from "styled-system";
+import styled from "styled-components";
+import {display, opacity} from "theme";
 
 const HiddenBox = styled.span`
   ${display};
+  ${opacity}
   overflow: hidden;
 `;
 
@@ -28,7 +28,6 @@ class Hidden extends React.Component {
       }
       displayList.push("initial");
     } else {
-      displayList.push("initial");
       for (i = 0; i < bp; i++) {
         displayList.push("initial");
       }
@@ -39,20 +38,15 @@ class Hidden extends React.Component {
 
   render() {
     const {children} = this.props;
+
     const display = this.getDisplayList();
     return <HiddenBox display={display}>{children}</HiddenBox>;
   }
 }
-
-Hidden.propTypes = {
-  up: PropTypes.bool,
-  down: PropTypes.bool,
-  bp: PropTypes.number.isRequired
-};
 
 Hidden.defaultProps = {
   up: false,
   down: false
 };
 
-export default withTheme(Hidden);
+export default Hidden;

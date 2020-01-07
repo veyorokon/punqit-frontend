@@ -159,7 +159,7 @@ class Hero extends React.Component {
 
         <Hidden down bp={4}>
           <VideoContainer
-            right="0"
+            right={"0"}
             top={r("30% -------> 20%")}
             mt={"auto"}
             w={"110rem"}
@@ -173,7 +173,8 @@ class Hero extends React.Component {
               loop
               muted
               type="video/mp4"
-              width={"130rem"}
+              width={"100%"}
+              h={"130rem"}
               ml={r("0 ----> 15rem 4rem")}
               height={"auto"}
               {...videoOptions}

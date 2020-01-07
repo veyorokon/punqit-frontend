@@ -1,25 +1,20 @@
-import {Button, Heading, Input, Video} from "./themedComponents";
-import {Text, Box, Flex} from "./core";
+import {Flex, Box, Button, Input, Text, Video} from "./core";
 
-import Animate, {appear} from "./animation";
-import Transition from "./transition";
-import Hidden from "./hidden";
-import {Tabs, TabHeaders, TabComponents, Tab, Panel} from "./tabs";
-
+import Animate, {appear} from "./core/animation";
+import Hidden from "./core/hidden";
+import {Tabs, TabHeaders, TabContents, Tab, Panel} from "./composite/tabs";
 export {
-  Video,
   Text,
   Box,
   Flex,
   Animate,
-  Transition,
   Hidden,
   Button,
-  Heading,
   Input,
+  Video,
   Tabs,
   TabHeaders,
-  TabComponents,
+  TabContents,
   Tab,
   Panel,
   appear

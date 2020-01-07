@@ -12,104 +12,154 @@ import {compose} from "styled-system";
 /*
      Fields
  */
-export const overflow = configure("overflow", ["overflow"]);
 
-export const top = configure("top", ["top"], "space");
-export const bottom = configure("bottom", ["bottom"], "space");
-export const left = configure("left", ["left"], "space");
-export const right = configure("right", ["right"], "space");
+const width = configure("width", ["w"], "space");
+const height = configure("height", ["h"], "space");
 
-export const width = configure("width", ["w", "width"], "space");
-export const height = configure("height", ["h", "height"], "space");
+const background = configure("background", ["bg", "background"], "colors");
+const color = configure("color", "color", "colors");
 
-export const background = configure(
-  "background",
-  ["bg", "background"],
-  "colors"
-);
-export const color = configure("color", "color", "colors");
-
-export const fontWeight = configure("fontWeight", "fw", "fontWeights");
-export const fontSize = configure("fontSize", "fs", "fontSizes");
-export const typography = compose(
+const fontWeight = configure("fontWeight", "fw", "fontWeights");
+const fontSize = configure("fontSize", "fs", "fontSizes");
+const lineHeight = configure("lineHeight", "lh");
+const typography = compose(
   fontWeight,
-  fontSize
+  fontSize,
+  lineHeight
 );
 
-export const margin = configure("margin", ["margin", "m"], "space");
-export const marginTop = configure("marginTop", ["marginTop", "mt"], "space");
-export const marginBottom = configure(
-  "marginBottom",
-  ["marginBottom", "mb"],
-  "space"
-);
-export const marginLeft = configure(
-  "marginLeft",
-  ["marginLeft", "ml"],
-  "space"
-);
-export const marginRight = configure(
-  "marginRight",
-  ["marginRight", "mr"],
-  "space"
-);
-export const marginFields = compose(
-  margin,
+const marginTop = configure("marginTop", ["marginTop", "mt"], "space");
+const marginBottom = configure("marginBottom", ["marginBottom", "mb"], "space");
+const marginLeft = configure("marginLeft", ["marginLeft", "ml"], "space");
+const marginRight = configure("marginRight", ["marginRight", "mr"], "space");
+const marginAll = configure("margin", "m", "space");
+
+const margin = compose(
+  marginAll,
   marginTop,
   marginBottom,
   marginLeft,
   marginRight
 );
 
-export const padding = configure("padding", ["padding", "p"], "space");
-export const paddingTop = configure(
-  "paddingTop",
-  ["paddingTop", "pt"],
-  "space"
-);
-export const paddingBottom = configure(
+const paddingTop = configure("paddingTop", ["paddingTop", "pt"], "space");
+const paddingBottom = configure(
   "paddingBottom",
   ["paddingBottom", "pb"],
   "space"
 );
-export const paddingLeft = configure(
-  "paddingLeft",
-  ["paddingLeft", "pl"],
-  "space"
-);
-export const paddingRight = configure(
-  "paddingRight",
-  ["paddingRight", "pr"],
-  "space"
-);
-export const paddingFields = compose(
-  padding,
+const paddingLeft = configure("paddingLeft", ["paddingLeft", "pl"], "space");
+const paddingRight = configure("paddingRight", ["paddingRight", "pr"], "space");
+const paddingAll = configure("padding", "p", "space");
+
+const padding = compose(
+  paddingAll,
   paddingTop,
   paddingBottom,
   paddingLeft,
   paddingRight
 );
 
-export const flexDirection = configure("flexDirection");
-export const alignItems = configure("alignItems");
-export const justifyContent = configure("justifyContent");
-export const flexFields = compose(
-  flexDirection,
-  alignItems,
-  justifyContent
+const transitionDuration = configure("transitionDuration", "duration");
+const transitionTimingFunction = configure("transitionTimingFunction");
+const transitionDelay = configure("transitionDelay", "delay");
+
+const transitionFields = compose(
+  transitionDuration,
+  transitionTimingFunction,
+  transitionDelay
 );
 
-export const generics = compose(
+const position = configure("position");
+const top = configure("top");
+const right = configure("right");
+const bottom = configure("bottom");
+const left = configure("left");
+
+const positionFields = compose(
+  position,
+  top,
+  right,
+  bottom,
+  left
+);
+
+const generics = compose(
   typography,
-  marginFields,
-  paddingFields,
+  margin,
+  padding,
   background,
   color,
   width,
   height,
-  overflow,
+  transitionFields,
+  positionFields
+);
+
+const animationDuration = configure("animationDuration");
+const animationTimingFunction = configure("animationTimingFunction");
+const animationDelay = configure("animationDelay");
+const animationFillMode = configure("animationFillMode");
+
+const animationFields = compose(
+  animationDuration,
+  animationTimingFunction,
+  animationDelay,
+  animationFillMode
+);
+
+const display = configure("display");
+const flexGrow = configure("flexGrow");
+const flexDirection = configure("flexDirection");
+
+const flexFields = compose(
+  display,
+  flexGrow,
+  flexDirection
+);
+
+const borderRadius = configure("borderRadius", "br", "radii");
+const opacity = configure("opacity");
+
+export {
+  generics,
+  background,
+  color,
+  lineHeight,
+  typography,
+  fontWeight,
+  fontSize,
+  margin,
+  marginTop,
+  marginBottom,
+  marginLeft,
+  marginRight,
+  padding,
+  paddingTop,
+  paddingLeft,
+  paddingRight,
+  animationFields,
+  animationDuration,
+  animationTimingFunction,
+  animationDelay,
+  animationFillMode,
+  display,
+  flexGrow,
+  borderRadius,
+  flexDirection,
+  flexFields,
+  width,
+  height,
+  paddingBottom,
+  transitionFields,
+  transitionDuration,
+  transitionTimingFunction,
+  transitionDelay,
+  opacity,
+  position,
   top,
+  right,
   bottom,
   left,
-  right
-);
+  positionFields
+};
