@@ -41,7 +41,13 @@ import {
   right,
   bottom,
   left,
-  positionFields
+  positionFields,
+  backgroundImage,
+  backgroundPosition,
+  backgroundSize,
+  backgroundPositionX,
+  overflow,
+  backgroundPositionY
 } from "./fields";
 
 export default theme;
@@ -87,5 +93,11 @@ export {
   bottom,
   left,
   positionFields,
-  themedComponent
+  backgroundImage,
+  backgroundPosition,
+  backgroundSize,
+  themedComponent,
+  backgroundPositionX,
+  overflow,
+  backgroundPositionY
 };

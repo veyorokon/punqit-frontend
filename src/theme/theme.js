@@ -22,7 +22,7 @@ const theme = {
     bold: 700
   },
   colors: {
-    blacks: ["#000"],
+    blacks: ["#000", "#090909"],
     whites: ["#fff"],
     greys: ["#7D8B98"],
     oranges: ["#F87060"],

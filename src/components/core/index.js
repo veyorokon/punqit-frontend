@@ -13,7 +13,7 @@ const Box = themedComponent(
     ${borderRadius}
   `
 );
-Box.defaultProps = {margin: "auto"};
+Box.defaultProps = {margin: "auto", overflow: "hidden"};
 
 const Button = themedComponent(
   styled.button`
@@ -26,7 +26,12 @@ const Flex = themedComponent(
     ${flexFields}
   `
 );
-Flex.defaultProps = {display: "flex", flexGrow: 1};
+Flex.defaultProps = {
+  display: "flex",
+  flexGrow: 1,
+  overflow: "hidden",
+  maxHeight: "fit-content"
+};
 
 const Input = themedComponent(
   styled.input`
@@ -46,7 +51,9 @@ const Text = themedComponent(styled.p`
 `);
 
 Text.defaultProps = {
-  height: "100%"
+  minHeight: "fit-content",
+  width: "fit-content",
+  overflow: "hidden"
 };
 
 const Video = themedComponent(

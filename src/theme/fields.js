@@ -12,11 +12,20 @@ import {compose} from "styled-system";
 /*
      Fields
  */
+const overflow = configure("overflow");
 
-const width = configure("width", ["w"], "space");
-const height = configure("height", ["h"], "space");
+const width = configure("width", "w", "space");
+const height = configure("height", "h", "space");
+const minHeight = configure("minHeight");
+const maxHeight = configure("maxHeight");
 
 const background = configure("background", ["bg", "background"], "colors");
+const backgroundImage = configure("backgroundImage");
+const backgroundPosition = configure("backgroundPosition");
+const backgroundPositionX = configure("backgroundPositionX", "bpx");
+const backgroundPositionY = configure("backgroundPositionY", "bpy");
+const backgroundSize = configure("backgroundSize");
+
 const color = configure("color", "color", "colors");
 
 const fontWeight = configure("fontWeight", "fw", "fontWeights");
@@ -85,6 +94,7 @@ const positionFields = compose(
 );
 
 const generics = compose(
+  overflow,
   typography,
   margin,
   padding,
@@ -93,7 +103,9 @@ const generics = compose(
   width,
   height,
   transitionFields,
-  positionFields
+  positionFields,
+  minHeight,
+  maxHeight
 );
 
 const animationDuration = configure("animationDuration");
@@ -161,5 +173,12 @@ export {
   right,
   bottom,
   left,
-  positionFields
+  positionFields,
+  backgroundImage,
+  backgroundPosition,
+  backgroundSize,
+  backgroundPositionX,
+  backgroundPositionY,
+  minHeight,
+  overflow
 };

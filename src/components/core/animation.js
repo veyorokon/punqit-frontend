@@ -32,7 +32,11 @@ Animate.defaultProps = {
   animationFillMode: "both",
   animationDuration: "0.5s",
   animationTimingFunction: "ease-in-out",
-  animationDelay: ".2s"
+  animationDelay: ".2s",
+  width: "100%",
+  minHeight: "fit-content",
+  height: "fit-content",
+  overflow: "hidden"
 };
 
 export default Animate;
