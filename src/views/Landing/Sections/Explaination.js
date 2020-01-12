@@ -40,7 +40,6 @@ const Card = props => {
       bg={"whites.0"}
       h={r("33rem -> 40rem 43rem")}
       minHeight="fit-content"
-      w={"42.6rem"}
       ml={r("unset ---> 2% --> 3%")}
       mr={r("unset ---> 2% --> 3%")}
       mb={r("5 ---> 6")}
@@ -127,6 +126,26 @@ export default () => {
                 ratio="16:9"
                 src="https://www.youtube.com/embed/ZXsQAXx_ao0"
               />
+              <Flex p={2} mt={2} maxHeight="unset" height="100%" bg="greys.1">
+                <Text fs={r("1.4rem -> 1.6rem")} m="auto" textAlign="center">
+                  Your <b>target</b> video contains the person whose face you
+                  want to <i>replace</i> with the extracted face.
+                </Text>
+              </Flex>
+            </Card>
+
+            <Card width={"42.6rem"} overflow="hidden">
+              <Text
+                fs={r("1.2rem --> 1.4rem -> 1.8rem")}
+                m="auto"
+                mt={1}
+                mb={1}
+                textAlign="center"
+              >
+                Step 3<br />
+                <span style={{color: "grey"}}>Deep fake</span>
+              </Text>
+              <ResponsiveEmbed ratio="16:9" src="/video/face-swapped-3.mp4" />
               <Flex p={2} mt={2} maxHeight="unset" height="100%" bg="greys.1">
                 <Text fs={r("1.4rem -> 1.6rem")} m="auto" textAlign="center">
                   Your <b>target</b> video contains the person whose face you
