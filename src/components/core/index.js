@@ -13,7 +13,7 @@ const Box = themedComponent(
     ${borderRadius}
   `
 );
-Box.defaultProps = {margin: "auto", overflow: "hidden"};
+Box.defaultProps = {};
 
 const Button = themedComponent(
   styled.button`
@@ -29,7 +29,6 @@ const Flex = themedComponent(
 Flex.defaultProps = {
   display: "flex",
   flexGrow: 1,
-  overflow: "hidden",
   maxHeight: "fit-content"
 };
 

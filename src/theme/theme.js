@@ -23,8 +23,8 @@ const theme = {
   },
   colors: {
     blacks: ["#000", "#090909"],
-    whites: ["#fff"],
-    greys: ["#7D8B98"],
+    whites: ["#fff", "#FAFAFA"],
+    greys: ["#7D8B98", "#e6eaef"],
     oranges: ["#F87060"],
     greens: ["#596657", "#697268"]
   },

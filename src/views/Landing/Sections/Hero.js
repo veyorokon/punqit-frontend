@@ -7,16 +7,13 @@ import {
   Video,
   Hidden as CHidden,
   Button,
-  ImageBox
+  ImageBox,
+  Section
 } from "components";
 import styled from "styled-components";
 import {responsive as r} from "lib";
 const heroBgMobile = "/images/hero-black-2.jpg";
 const MobileImage = `url(${heroBgMobile})`;
-
-const Section = styled(Flex)`
-  transition: height 0.2s ease-in-out;
-`;
 
 const Hidden = styled(CHidden)`
   transition: display 0.3s ease-in-out;
@@ -67,9 +64,7 @@ class Hero extends React.Component {
     return (
       <Section
         p={r("2 ------> 3")}
-        overflow="hidden"
-        width={"100vw"}
-        height={"90rem"}
+        height={r("70rem 85rem -> 90rem")}
         background={r("blacks.1 -----> blacks.0")}
       >
         <ImageBox
@@ -85,12 +80,12 @@ class Hero extends React.Component {
             "none"
           ]}
           width={"100%"}
-          justifyContent={["center", "center", "center", "flex-start"]}
-          backgroundSize={r("80rem -> 90rem -----> 100rem 120rem")}
+          justifyContent={["flex-start"]}
+          backgroundSize={r("70rem 80rem 90rem -----> 100rem 120rem")}
           backgroundPosition={"left"}
-          backgroundPositionY={r("20rem ------> center")}
+          backgroundPositionY={r("15rem 20rem -----> center")}
           backgroundPositionX={[
-            "-46rem",
+            "-40rem",
             "-46rem",
             "-46rem",
             "-46rem",
@@ -130,7 +125,7 @@ class Hero extends React.Component {
               </Flex>
             </Animate>
             <Flex mt={4} mb={1} w={"fit-content"}>
-              <Animate delay={"0.5s"}>
+              <Animate animationDelay={"0.5s"}>
                 <SubTitle
                   lineHeight="1"
                   as="p"
@@ -148,7 +143,7 @@ class Hero extends React.Component {
               mt={r("6 -----> 4")}
               w={"fit-content"}
             >
-              <Animate delay={"0.75s"}>
+              <Animate animationDelay={"0.75s"}>
                 <CallToAction
                   br={"5px"}
                   h="5rem"
@@ -174,6 +169,9 @@ class Hero extends React.Component {
             bg="blacks.0"
           >
             <Video
+              onContextMenu={function(e) {
+                e.preventDefault();
+              }}
               playsInline
               autoPlay
               no-controls

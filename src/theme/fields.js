@@ -13,6 +13,7 @@ import {compose} from "styled-system";
      Fields
  */
 const overflow = configure("overflow");
+const textAlign = configure("textAlign");
 
 const width = configure("width", "w", "space");
 const height = configure("height", "h", "space");
@@ -105,7 +106,8 @@ const generics = compose(
   transitionFields,
   positionFields,
   minHeight,
-  maxHeight
+  maxHeight,
+  textAlign
 );
 
 const animationDuration = configure("animationDuration");
@@ -123,15 +125,23 @@ const animationFields = compose(
 const display = configure("display");
 const flexGrow = configure("flexGrow");
 const flexDirection = configure("flexDirection");
+const flexWrap = configure("flexWrap");
+const justifyContent = configure("justifyContent");
+const alignItems = configure("alignItems");
 
 const flexFields = compose(
   display,
   flexGrow,
-  flexDirection
+  flexDirection,
+  flexWrap,
+  justifyContent,
+  alignItems
 );
 
 const borderRadius = configure("borderRadius", "br", "radii");
 const opacity = configure("opacity");
+
+const gridTemplateColumns = configure("gridTemplateColumns");
 
 export {
   generics,
@@ -180,5 +190,10 @@ export {
   backgroundPositionX,
   backgroundPositionY,
   minHeight,
-  overflow
+  overflow,
+  textAlign,
+  gridTemplateColumns,
+  flexWrap,
+  justifyContent,
+  alignItems
 };

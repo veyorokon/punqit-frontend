@@ -47,7 +47,12 @@ import {
   backgroundSize,
   backgroundPositionX,
   overflow,
-  backgroundPositionY
+  backgroundPositionY,
+  textAlign,
+  gridTemplateColumns,
+  flexWrap,
+  justifyContent,
+  alignItems
 } from "./fields";
 
 export default theme;
@@ -99,5 +104,10 @@ export {
   themedComponent,
   backgroundPositionX,
   overflow,
-  backgroundPositionY
+  backgroundPositionY,
+  textAlign,
+  gridTemplateColumns,
+  flexWrap,
+  justifyContent,
+  alignItems
 };
