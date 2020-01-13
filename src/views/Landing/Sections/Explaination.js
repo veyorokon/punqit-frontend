@@ -25,6 +25,10 @@ const TitleContainer = styled(Box)`
   transition: margin 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 `;
 
+const ExplainationSection = styled(Section)`
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+`;
+
 const Card = props => {
   return (
     <CardBox
@@ -40,6 +44,7 @@ const Card = props => {
       bg={"whites.0"}
       h={r("33rem -> 40rem 43rem")}
       minHeight="fit-content"
+      minWidth={r("100% --> 45rem --> 45rem -> 40rem 32rem")}
       ml={r("unset ---> 2% --> 3%")}
       mr={r("unset ---> 2% --> 3%")}
       mb={r("5 ---> 6")}
@@ -53,16 +58,17 @@ const Card = props => {
 
 export default () => {
   return (
-    <Section
+    <ExplainationSection
       bg={"whites.1"}
       height="fit-content"
       minHeight={r("70rem 85rem -> 90rem")}
       p={r("unset ---> 2")}
+      overflow="scroll"
     >
       <Container p={r("unset ---> 2")} w="100%" h="100%">
         <Box mt={3} w="100%">
           <TitleContainer
-            p={r("1 ---> 2 --> 3")}
+            p={r("2 --> 3")}
             mt={r("4 ----> 6")}
             mb={r("4 -> 5 -> 6")}
           >
@@ -105,8 +111,8 @@ export default () => {
               />
               <Flex p={2} mt={2} maxHeight="unset" height="100%" bg="greys.1">
                 <Text fs={r("1.4rem -> 1.6rem")} m="auto" textAlign="center">
-                  Your <b>source</b> video contains the person whose face you
-                  want to <i>extract</i>.
+                  When creating deep fakes, the <b>source</b> video contains the
+                  person whose face you want to <i>extract</i>.
                 </Text>
               </Flex>
             </Card>
@@ -123,13 +129,14 @@ export default () => {
                 <span style={{color: "grey"}}>Upload target</span>
               </Text>
               <ResponsiveEmbed
+                autoplay
                 ratio="16:9"
-                src="https://www.youtube.com/embed/ZXsQAXx_ao0"
+                src="https://www.youtube.com/embed/ZXsQAXx_ao0?start=10&autoplay=1"
               />
               <Flex p={2} mt={2} maxHeight="unset" height="100%" bg="greys.1">
                 <Text fs={r("1.4rem -> 1.6rem")} m="auto" textAlign="center">
-                  Your <b>target</b> video contains the person whose face you
-                  want to <i>replace</i> with the extracted face.
+                  A deep fake <b>target</b> video contains the person whose face
+                  you want to <i>replace</i>.
                 </Text>
               </Flex>
             </Card>
@@ -143,19 +150,19 @@ export default () => {
                 textAlign="center"
               >
                 Step 3<br />
-                <span style={{color: "grey"}}>Deep fake</span>
+                <span style={{color: "grey"}}>Create a deep fake</span>
               </Text>
               <ResponsiveEmbed ratio="16:9" src="/video/face-swapped-3.mp4" />
               <Flex p={2} mt={2} maxHeight="unset" height="100%" bg="greys.1">
                 <Text fs={r("1.4rem -> 1.6rem")} m="auto" textAlign="center">
-                  Your <b>target</b> video contains the person whose face you
-                  want to <i>replace</i> with the extracted face.
+                  The resulting video you create <b>deep fakes</b> the source
+                  person's face into the target person's face.
                 </Text>
               </Flex>
             </Card>
           </Flex>
         </Box>
       </Container>
-    </Section>
+    </ExplainationSection>
   );
 };

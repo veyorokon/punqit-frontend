@@ -97,7 +97,7 @@ class Hero extends React.Component {
           ]}
         >
           <TitleContainer
-            h={r("35rem -> 40rem")}
+            maxHeight="fit-content"
             flexDirection={"column"}
             ml={r("auto -----> 5")}
             mr={r("auto -----> 0")}

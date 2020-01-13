@@ -3,7 +3,16 @@ import {Flex, Box, Button, Input, Text, Video} from "./core";
 import Animate, {appear} from "./core/animation";
 import Hidden from "./core/hidden";
 import {Tabs, TabHeaders, TabContents, Tab, Panel} from "./composite/tabs";
-import {ImageBox, Section, Title, SubTitle, Grid} from "./styled";
+import ImageUploader from "./composite/ImageUploader";
+import {
+  ImageBox,
+  Section,
+  Title,
+  SubTitle,
+  Grid,
+  Header,
+  Label
+} from "./styled";
 export {
   Text,
   Box,
@@ -23,5 +32,8 @@ export {
   Title,
   SubTitle,
   Grid,
+  ImageUploader,
+  Header,
+  Label,
   appear
 };

@@ -19,6 +19,8 @@ const width = configure("width", "w", "space");
 const height = configure("height", "h", "space");
 const minHeight = configure("minHeight");
 const maxHeight = configure("maxHeight");
+const minWidth = configure("minWidth");
+const maxWidth = configure("maxWidth");
 
 const background = configure("background", ["bg", "background"], "colors");
 const backgroundImage = configure("backgroundImage");
@@ -107,7 +109,9 @@ const generics = compose(
   positionFields,
   minHeight,
   maxHeight,
-  textAlign
+  textAlign,
+  minWidth,
+  maxWidth
 );
 
 const animationDuration = configure("animationDuration");
@@ -195,5 +199,7 @@ export {
   gridTemplateColumns,
   flexWrap,
   justifyContent,
-  alignItems
+  alignItems,
+  minWidth,
+  maxWidth
 };

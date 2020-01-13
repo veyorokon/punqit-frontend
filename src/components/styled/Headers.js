@@ -25,7 +25,7 @@ const AnimatedText = styled(Text)`
 const SubTitleWrapper = styled(AnimatedText)`
   letter-spacing: 1px;
   animation-delay: 0.1s;
-  line-height: calc(3.2rem + (8 * (100vw - 48rem) / 672));
+  line-height: calc(2.8rem + (8 * (100vw - 48rem) / 672));
 `;
 const TitleWrapper = styled(AnimatedText)`
   padding-bottom: 1.5rem;
@@ -39,6 +39,8 @@ const SubTitle = props => (
     fontSize={
       props.fontSize
         ? props.fontSize
+        : props.fs
+        ? props.fs
         : ["1.5rem", "1.5rem", "1.5rem", "1.5rem", "2rem", "2rem", "2rem"]
     }
     {...props}
@@ -52,6 +54,8 @@ const Title = props => (
     fontSize={
       props.fontSize
         ? props.fontSize
+        : props.fs
+        ? props.fs
         : ["3rem", "3.6rem", "4rem", "4rem", "4.2rem", "4.4rem", "4.4rem"]
     }
     lineHeight={
@@ -63,5 +67,10 @@ const Title = props => (
     {props.children}
   </TitleWrapper>
 );
+
+const Header = styled(Text)`
+  font-family: -apple-system, BlinkMacSystemFont !important;
+`;
+export default Header;
 
 export {SubTitle, Title};

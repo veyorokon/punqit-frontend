@@ -52,7 +52,9 @@ import {
   gridTemplateColumns,
   flexWrap,
   justifyContent,
-  alignItems
+  alignItems,
+  minWidth,
+  maxWidth
 } from "./fields";
 
 export default theme;
@@ -109,5 +111,7 @@ export {
   gridTemplateColumns,
   flexWrap,
   justifyContent,
+  minWidth,
+  maxWidth,
   alignItems
 };

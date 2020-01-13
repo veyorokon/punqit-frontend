@@ -29,7 +29,7 @@ const Flex = themedComponent(
 Flex.defaultProps = {
   display: "flex",
   flexGrow: 1,
-  maxHeight: "fit-content"
+  minHeight: "fit-content"
 };
 
 const Input = themedComponent(

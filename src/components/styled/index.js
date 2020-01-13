@@ -1,6 +1,9 @@
 import ImageBox from "./ImageBox";
 import Section from "./Section";
-import {Title, SubTitle} from "./Headers";
+import Header, {Title, SubTitle} from "./Headers";
 import Grid from "./Grid";
+import Label from "./Label";
 
-export {Grid, ImageBox, Section, Title, SubTitle};
+import GetImageBox from "./GetImageBox";
+
+export {Grid, ImageBox, Section, Title, SubTitle, GetImageBox, Header, Label};
