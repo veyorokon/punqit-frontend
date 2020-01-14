@@ -1,32 +1,39 @@
-import {
-  Text,
-  Box,
-  Flex,
-  Button,
-  Heading,
-  Input,
-  Video
-} from "./themedComponents";
-import Animate, {appear} from "./animation";
-import Transition from "./transition";
-import Hidden from "./hidden";
-import {Tabs, TabHeaders, TabComponents, Tab, Panel} from "./tabs";
+import {Flex, Box, Button, Input, Text, Video} from "./core";
 
+import Animate, {appear} from "./core/animation";
+import Hidden from "./core/hidden";
+import {Tabs, TabHeaders, TabContents, Tab, Panel} from "./composite/tabs";
+import ImageUploader from "./composite/ImageUploader";
+import {
+  ImageBox,
+  Section,
+  Title,
+  SubTitle,
+  Grid,
+  Header,
+  Label
+} from "./styled";
 export {
-  Video,
   Text,
   Box,
   Flex,
   Animate,
-  Transition,
   Hidden,
   Button,
-  Heading,
   Input,
+  Video,
   Tabs,
   TabHeaders,
-  TabComponents,
+  TabContents,
   Tab,
   Panel,
+  ImageBox,
+  Section,
+  Title,
+  SubTitle,
+  Grid,
+  ImageUploader,
+  Header,
+  Label,
   appear
 };
