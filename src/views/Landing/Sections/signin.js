@@ -10,9 +10,9 @@ import React from "react";
 import {Box, Flex, TabHeaders} from "components";
 import styled, {css} from "styled-components";
 
+//box-shadow: 0 0 2rem rgba(0, 0, 0, 0.10196);
 const Menu = styled(Flex)`
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.10196);
-
+  box-shadow: rgba(0, 0, 0, 0.26) 0px 2px 5px 0px;
   z-index: 10;
 `;
 
