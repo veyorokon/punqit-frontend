@@ -2,7 +2,14 @@ import {Flex, Box, Button, Input, Text, Video} from "./core";
 
 import Animate, {appear} from "./core/animation";
 import Hidden from "./core/hidden";
-import {Tabs, TabHeaders, TabContents, Tab, Panel} from "./composite/tabs";
+import {
+  Tabs,
+  TabHeaders,
+  TabContents,
+  TabComponent,
+  Tab,
+  Panel
+} from "./composite/tabs";
 import ImageUploader from "./composite/ImageUploader";
 import {
   ImageBox,
@@ -35,5 +42,6 @@ export {
   ImageUploader,
   Header,
   Label,
+  TabComponent,
   appear
 };

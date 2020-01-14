@@ -24,6 +24,7 @@ const Button = themedComponent(
 const Flex = themedComponent(
   styled.div`
     ${flexFields}
+    ${borderRadius}
   `
 );
 Flex.defaultProps = {
