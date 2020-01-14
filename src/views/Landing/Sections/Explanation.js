@@ -9,10 +9,9 @@ const Container = styled(Box)`
   background-size: 35px 35px;
 `;
 
-const CardBox = styled(Box)`
+const CardBox = styled(Flex)`
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  display: flex;
   flex-direction: column;
   overflow: auto;
   position: relative;
@@ -42,7 +41,7 @@ const Card = props => {
       ]}
       br="2px"
       bg={"whites.0"}
-      h={r("33rem -> 40rem 43rem")}
+      h={r("35rem -> 40rem 43rem")}
       minHeight="fit-content"
       minWidth={r("100% --> 45rem --> 45rem -> 40rem 32rem")}
       ml={r("unset ---> 2% --> 3%")}
@@ -63,7 +62,7 @@ export default () => {
       height="fit-content"
       minHeight={r("70rem 85rem -> 90rem")}
       p={r("unset ---> 2")}
-      overflow="scroll"
+      overflow="hidden"
     >
       <Container p={r("unset ---> 2")} w="100%" h="100%">
         <Box mt={3} w="100%">
@@ -109,7 +108,13 @@ export default () => {
                 ratio="16:9"
                 src="https://www.youtube.com/embed/TZA7lItH8GQ?start=13"
               />
-              <Flex p={2} mt={2} maxHeight="unset" height="100%" bg="greys.1">
+              <Flex
+                minHeight="10rem"
+                p={2}
+                mt={2}
+                maxHeight="unset"
+                bg="greys.1"
+              >
                 <Text fs={r("1.4rem -> 1.6rem")} m="auto" textAlign="center">
                   When creating deep fakes, the <b>source</b> video contains the
                   person whose face you want to <i>extract</i>.
@@ -133,7 +138,13 @@ export default () => {
                 ratio="16:9"
                 src="https://www.youtube.com/embed/ZXsQAXx_ao0?start=10&autoplay=1"
               />
-              <Flex p={2} mt={2} maxHeight="unset" height="100%" bg="greys.1">
+              <Flex
+                minHeight="10rem"
+                p={2}
+                mt={2}
+                maxHeight="unset"
+                bg="greys.1"
+              >
                 <Text fs={r("1.4rem -> 1.6rem")} m="auto" textAlign="center">
                   A deep fake <b>target</b> video contains the person whose face
                   you want to <i>replace</i>.
@@ -153,7 +164,13 @@ export default () => {
                 <span style={{color: "grey"}}>Create a deep fake</span>
               </Text>
               <ResponsiveEmbed ratio="16:9" src="/video/face-swapped-3.mp4" />
-              <Flex p={2} mt={2} maxHeight="unset" height="100%" bg="greys.1">
+              <Flex
+                p={2}
+                mt={2}
+                maxHeight="unset"
+                minHeight="10rem"
+                bg="greys.1"
+              >
                 <Text fs={r("1.4rem -> 1.6rem")} m="auto" textAlign="center">
                   The resulting video you create <b>deep fakes</b> the source
                   person's face into the target person's face.

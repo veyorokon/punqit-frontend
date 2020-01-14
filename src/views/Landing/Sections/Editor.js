@@ -2,6 +2,7 @@ import React from "react";
 import {SubTitle, Title, Flex, Box, ImageUploader} from "components";
 import {responsive as r} from "lib";
 import styled from "styled-components";
+import Signin from "./components/Signin";
 
 const EditorSection = styled(Flex)`
   background-size: 2rem 2rem;
@@ -82,7 +83,8 @@ export default class Editor extends React.Component {
           w="100%"
           h="100vh"
         >
-          <ImageUploader
+          <Signin />
+          {/*<ImageUploader
             mb={"4rem !important"}
             height={r("45rem")}
             maxWidth={r("45rem")}
@@ -107,7 +109,7 @@ export default class Editor extends React.Component {
             changeImage={null}
             handleImageChange={(e, val) => this._handleImageChange(e, val)}
             isImageLoading={null}
-          />
+          />*/}
         </Flex>
       </EditorSection>
     );
