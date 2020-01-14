@@ -9,11 +9,13 @@
 import React from "react";
 import {Box, Flex, TabHeaders} from "components";
 import styled, {css} from "styled-components";
-
+import {responsive as r} from "lib";
 //box-shadow: 0 0 2rem rgba(0, 0, 0, 0.10196);
 const Menu = styled(Flex)`
   box-shadow: rgba(0, 0, 0, 0.26) 0px 2px 5px 0px;
   z-index: 10;
+  max-width: 100%;
+  transition: margin 0.2s;
 `;
 
 const PanelNavigation = styled(Flex)`
@@ -35,23 +37,17 @@ const NavigationItem = styled(Flex)`
     `}
 `;
 
-const OptionHeader = styled(Box)`
-  font-size: 2.4rem;
-  text-align: center;
-  color: white;
-  font-weight: 400;
-  line-height: 1.5;
-`;
-
 const Hide = styled(Box)`
-  transition: visibility 0s, opacity 0.8s ease-in-out;
+  transition: opacity 0.8s ease-in-out;
   visibility: hidden;
   height: 0;
+  width: 0;
   opacity: 0;
   ${props =>
     props.display &&
     css`
-      height: initial;
+      height: 100%;
+      width: 100%;
       opacity: 1;
       visibility: visible;
     `}
@@ -126,40 +122,35 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <Box m="auto" w="fit-content" p={2}>
+      <Box
+        transition="margin 0.2s"
+        maxWidth="100%"
+        m="auto"
+        w="fit-content"
+        p={2}
+      >
         <Menu
           height={"50rem"}
           width={"50rem"}
           bg={"whites.0"}
           color={"blacks.0"}
-          m={2}
+          m={r("0 ---> 2")}
           borderRadius={"2px"}
           flexDirection="column"
         >
           <NavigationTabs
             width={"100%"}
             height={"4.3rem"}
+            minHeight={"4.3rem"}
             fs={"1.8rem"}
             selected={0}
-            tabHeaders={["Login", "Sign up", "Test"]}
+            tabHeaders={["Login", "Sign up"]}
           >
             <TabPanel p={2} w="100%">
-              <OptionHeader margin={"1rem auto 1rem"} bg={"oranges.0"}>
-                Login
-              </OptionHeader>
               Login
             </TabPanel>
             <TabPanel p={2} w="100%">
-              <OptionHeader margin={"1rem auto 1rem"} bg={"oranges.0"}>
-                Sign up
-              </OptionHeader>
               Sign up
-            </TabPanel>
-            <TabPanel p={2} w="100%">
-              <OptionHeader margin={"1rem auto 1rem"} bg={"oranges.0"}>
-                Test
-              </OptionHeader>
-              Test
             </TabPanel>
           </NavigationTabs>
         </Menu>
