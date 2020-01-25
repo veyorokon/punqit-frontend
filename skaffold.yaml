@@ -1,0 +1,15 @@
+apiVersion: skaffold/v1beta15
+kind: Config
+build:
+  artifacts:
+    - image: docker-registry.punqit.com/nodejs/punqit_frontend
+      context: react
+  tagPolicy:
+    gitCommit:
+  local:
+    useBuildKit: true
+
+deploy:
+  kubectl:
+    manifests:
+      - k8s/*

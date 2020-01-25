@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: punqit-frontend
+  namespace: staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: punqit-frontend
+  template:
+    metadata:
+      labels:
+        app: punqit-frontend
+    spec:
+      containers:
+        - name: main
+          image: docker-registry.punqit.com/nodejs/punqit_frontend
+          ports:
+          - containerPort: 80
