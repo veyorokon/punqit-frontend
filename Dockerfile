@@ -14,4 +14,4 @@ COPY --from=build-stage /app/build/ /usr/share/nginx/html
 # Copy the default nginx.conf
 COPY --from=build-stage /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
-ENV REACT_APP_BACKEND_API http://www.imageintel.act3-ace.com
+#ENV REACT_APP_BACKEND_API someenv.com

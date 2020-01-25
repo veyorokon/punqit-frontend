@@ -43,7 +43,7 @@ const Card = props => {
       bg={"whites.0"}
       h={r("35rem -> 40rem 43rem")}
       minHeight="fit-content"
-      minWidth={r("100% --> 45rem --> 45rem -> 40rem 32rem")}
+      minWidth={r("100% --> 44rem --> 45rem -> 40rem 32rem")}
       ml={r("unset ---> 2% --> 3%")}
       mr={r("unset ---> 2% --> 3%")}
       mb={r("5 ---> 6")}

@@ -12,7 +12,7 @@ import {
 } from "components";
 import styled from "styled-components";
 import {responsive as r} from "lib";
-const heroBgMobile = "/images/hero-black-2.jpg";
+const heroBgMobile = "/images/hero-black-3.jpg";
 const MobileImage = `url(${heroBgMobile})`;
 
 const Hidden = styled(CHidden)`
