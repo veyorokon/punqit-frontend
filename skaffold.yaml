@@ -7,9 +7,9 @@ build:
   tagPolicy:
     gitCommit:
   local:
-    useBuildKit: true
+    useBuildkit: true
 
 deploy:
   kubectl:
     manifests:
-      - k8s/*
+    - k8s/*
